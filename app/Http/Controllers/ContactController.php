@@ -2,19 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
-    public function sendContactForm(Request $request)
+    public function sendContactForm(ContactRequest $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'message' => 'required'
-        ]);
 
         Contact::create($request->all());
         // Send the email

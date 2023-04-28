@@ -17,14 +17,14 @@ class ContactController extends Controller
 
         Contact::create($request->all());
         // Send the email
-        Mail::send('info@ednadent.com', [
-            'name' => $request->name,
-            'email' => $request->email,
-            'message' => $request->message,
-        ], function ($mail) use ($request) {
-            $mail->to('you@example.com')
-                ->subject('New Contact Form Submission from ' . $request->name);
-        });
+        // Mail::send('info@ednadent.com', [
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'message' => $request->message,
+        // ], function ($mail) use ($request) {
+        //     $mail->to('you@example.com')
+        //         ->subject('New Contact Form Submission from ' . $request->name);
+        // });
 
         // Redirect back with success message
         return "Thank you for contacting us!";

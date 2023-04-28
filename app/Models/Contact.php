@@ -18,15 +18,15 @@ class Contact extends Model
      *
      * @return response()
      */
-    public static function boot()
-    {
+    // public static function boot()
+    // {
 
-        parent::boot();
+    //     parent::boot();
 
-        static::created(function ($item) {
+    //     static::created(function ($item) {
 
-            $adminEmail = "info@ednadent.com";
-            Mail::to($adminEmail)->send(new ContactMail($item));
-        });
-    }
+    //         $adminEmail = "info@ednadent.com";
+    //         Mail::to($adminEmail)->send(new ContactMail($item));
+    //     });
+    // }
 }
